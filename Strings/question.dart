@@ -155,10 +155,67 @@
 
 // conversion list to set *******************************************************************
 
+// void main() {
+//   List<int> numbers = [1, 1, 2, 3, 4];
+//   Set<int> mySet = numbers.toSet();
+//   Map<int, int> myMap = numbers.asMap();
+//   print(mySet);
+//   print(myMap);
+// }
+
 void main() {
-  List<int> numbers = [1, 1, 2, 3, 4];
-  Set<int> mySet = numbers.toSet();
-  Map<int, int> myMap = numbers.asMap();
-  print(mySet);
-  print(myMap);
+  String reversed = reverseString('ajay');
+  print(reversed);
+  reverseList();
+  reverseList1();
+  print(palindrone(151));
+}
+
+String reverseString(String input) {
+  String reversed = '';
+  for (int i = input.length - 1; i >= 0; --i) {
+    reversed += input[i];
+  }
+  return reversed;
+}
+
+reverseList() {
+  List<int> object = [1, 2, 3, 4, 5, 6];
+  List<int> reverse = object.reversed.toList();
+  print(reverse);
+
+  int length1 = object.length;
+  print("size of list : $length1");
+  object.add(7);
+  print(object);
+  object.addAll([8, 9]);
+  print(object);
+  object.remove(2);
+  print(object);
+
+  Set<int> objectSet = object.toSet();
+  print('list to set conversion : $objectSet');
+}
+
+void reverseList1() {
+  List<int> list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  int n = list1.length;
+
+  for (int i = 0; i < n ~/ 2; i++) {
+    int temp = list1[i];
+    list1[i] = list1[n - i - 1];
+
+    list1[n - 1 - i] = temp;
+  }
+  print(list1);
+}
+
+bool palindrone(int x) {
+  int sum = 0, target = x;
+  while (x > 0) {
+    int temp = x % 10;
+    x = x ~/ 10;
+    sum = sum * 10 + temp;
+  }
+  return sum == target;
 }

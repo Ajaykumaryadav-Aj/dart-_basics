@@ -130,12 +130,100 @@
 
 // ####################################################################################3
 
-void main() {
-  // List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// void main() {
+//   // List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  for (int i = 0; i <= 20; i++) {
-    if (i % 2 != 0) {
-      print(i);
-    }
+//   for (int i = 0; i <= 20; i++) {
+//     if (i % 2 != 0) {
+//       print(i);
+//     }
+//   }
+// }
+
+// import 'dart:io';
+
+// void main() {
+//   number(6);
+// }
+
+// void number(int n) {
+//   for (int i = 1; i <= n; i++) {
+//     for (int j = 1; j <= i; j++) {
+//       stdout.write(j);
+//     }
+//     print('');
+//   }
+// }
+
+// reverse String by for loop
+
+String reverString(String input) {
+  String reversed = '';
+  for (int i = input.length - 1; i >= 0; --i) {
+    reversed += input[i];
   }
+  return reversed;
+}
+
+void main() {
+  String reversed = reverString('hello sir');
+  print(reversed);
+  reverseList();
+  reverseList1();
+  reverseList2();
+  print(palindrome(121));
+  print(palindrome1(141));
+}
+
+// palindrome
+bool palindrome(int x) {
+  int sum = 0, target = x;
+
+  while (x > 0) {
+    int temp = x % 10;
+    x = x ~/ 10;
+    sum = sum * 10 + temp;
+  }
+  return sum == target;
+}
+
+// reverse list
+reverseList() {
+  List<int> object = [1, 2, 3, 4, 5, 6];
+  List<int> reverse = object.reversed.toList();
+  print(reverse);
+}
+
+void reverseList1() {
+  List<int> object1 = [1, 2, 3, 4, 5, 6, 7];
+  int n = object1.length;
+  for (int i = 0; i < n ~/ 2; i++) {
+    int temp;
+    temp = object1[i];
+    object1[i] = object1[n - i - 1];
+    object1[n - i - 1] = temp;
+  }
+  print("reverse List : $object1");
+}
+
+reverseList2() {
+  List<int> aj = [2, 4, 6, 8];
+
+  int n = aj.length;
+  for (int i = 0; i < n / 2; i++) {
+    int temp = aj[i];
+    aj[i] = aj[n - i - 1];
+    aj[n - i - 1] = temp;
+  }
+  print("list 2 reverse $aj");
+}
+
+bool palindrome1(int n) {
+  int sum = 0, target = n;
+  while (n > 0) {
+    int temp = n % 10;
+    n = n ~/ 10;
+    sum = sum * 10 + temp;
+  }
+  return target == sum;
 }

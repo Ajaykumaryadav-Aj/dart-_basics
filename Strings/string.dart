@@ -1,6 +1,4 @@
-import 'dart:io';
-
- void main() {
+void main() {
   String a = 'Ajay';
   String b = 'Kumar';
   String sentence = 'This is a sentance';
@@ -79,8 +77,20 @@ import 'dart:io';
     String reversedString = reversedCharacters.join('');
     return reversedString;
   }
- String original = 'Hello';
+
+  String original = 'Hello';
   String reversed = reverseStirng(original);
   print(reversed);
- 
+  String reversed1 = reversedStrings('name');
+  print(reversed1);
+}
+
+// write a dart code  string reverse  by for loop
+
+String reversedStrings(String name) {
+  String reversed = '';
+  for (int i = name.length - 1; i >= 0; --i) {
+    reversed += name[i];
+  }
+  return reversed;
 }
