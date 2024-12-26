@@ -163,12 +163,20 @@
 //   print(myMap);
 // }
 
+import 'dart:io';
+
 void main() {
   String reversed = reverseString('ajay');
   print(reversed);
   reverseList();
   reverseList1();
   print(palindrone(151));
+  print('Enter N');
+  int N = int.parse(stdin.readLineSync()!);
+  int result = Factorial(N);
+  print('Factorial of $N');
+  print(result);
+   
 }
 
 String reverseString(String input) {
@@ -218,4 +226,8 @@ bool palindrone(int x) {
     sum = sum * 10 + temp;
   }
   return sum == target;
+}
+
+int Factorial(int n) {
+  return n == 1 ? 1 : n * Factorial(n - 1);
 }
