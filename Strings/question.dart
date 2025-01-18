@@ -145,13 +145,13 @@
 
 // Calculating the Sum of the Squares of a List of Integers*************************************
 
-// void main() {
-//   List<int> numbers = [1, 2, 3, 4, 5, 6];
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6];
 
-//   Iterable<int> squares = numbers.map((e) => e * e);
-//   int sumOfSquare = squares.reduce((sum, element) => sum + element);
-//   print(sumOfSquare);
-// }
+  Iterable<int> squares = numbers.map((e) => e * e);
+  int sumOfSquare = squares.reduce((sum, element) => sum + element);
+  print(sumOfSquare);
+}
 
 // conversion list to set *******************************************************************
 
@@ -163,21 +163,21 @@
 //   print(myMap);
 // }
 
-import 'dart:io';
+// import 'dart:io';
 
-void main() {
-  String reversed = reverseString('ajay');
-  print(reversed);
-  reverseList();
-  reverseList1();
-  print(palindrone(151));
-  print('Enter N');
-  int N = int.parse(stdin.readLineSync()!);
-  int result = Factorial(N);
-  print('Factorial of $N');
-  print(result);
+// void main() {
+//   String reversed = reverseString('ajay');
+//   print(reversed);
+//   reverseList();
+//   reverseList1();
+//   print(palindrone(151));
+//   print('Enter N');
+//   int N = int.parse(stdin.readLineSync()!);
+//   int result = Factorial(N);
+//   print('Factorial of $N');
+//   print(result);
    
-}
+// }
 
 String reverseString(String input) {
   String reversed = '';
