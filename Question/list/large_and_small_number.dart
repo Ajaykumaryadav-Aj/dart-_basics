@@ -27,4 +27,22 @@ void main() {
     sum = sum + arr[i];
   }
   print(sum);
+  secondLargest();
+}
+
+// find second largest element in list
+
+void secondLargest() {
+  List numbers = [1, 2, 4, 5, 7, 9];
+  int first = numbers[0];
+  int second = numbers[0];
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] > first) {
+      second = first;
+      first = numbers[i];
+    } else if (numbers[i] > second && numbers[i] != first) {
+      second = numbers[i];
+    }
+  }
+  print("Second largest number is : $second");
 }
